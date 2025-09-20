@@ -13,7 +13,7 @@ def send_message(sender, instance, created,**kwargs):
         instance.user.save()
         token = os.environ.get("token")
         chat_id = os.environ.get("chat_id")
-        domin = "http://127.0.0.1:5000/"
+        domin = os.environ.get("backdomin")
         photo= f"{domin}{instance.specific_design_img.url}"
         url=f"https://api.telegram.org/bot{token}/sendPhoto"
         data= {
